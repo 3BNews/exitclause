@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exit Clause — Profile</title>
+  <link rel="stylesheet" href="webstyle.css">
+</head>
+<body>
+
+<div class="topbar">EXIT CLAUSE</div>
+<div class="nav">
+  <a href="index.html" class="nav-btn">Home</a>
+  <a href="about.html" class="nav-btn">About</a>
+  <a href="crew.html" class="nav-btn">Meet the Crew!</a>
+  <a href="schedule.html" class="nav-btn">Schedule</a>
+</div>
+
+<div class="content" id="profileContent">
+  <!-- Character content loads here dynamically -->
+</div>
+
+<script>
+const content = document.getElementById("profileContent");
+const params = new URLSearchParams(window.location.search);
+const tag = params.get(""); // handles ?=floppydisk format
+
+// Support both ?=floppydisk and ?tag=floppydisk
+const finalTag = tag || params.get("tag");
+
+if (finalTag) {
+  fetch("characters.json")
+    .then(res => res.json())
+    .then(data => {
+      const character = data.find(c => c.tag === finalTag);
+      if (character) {
+        document.title = `Exit Clause — ${character.name}`;
+        content.innerHTML = `
+          <h2>${character.name}</h2>
+          <p><strong>${character.role}</strong></p>
+          <p>${character.description}</p>
+          ${character.customHTML || ""}
+        `;
+      } else {
+        content.innerHTML = "<h2>Profile Not Found</h2>";
+      }
+    });
+} else {
+  content.innerHTML = "<h2>No Profile Selected</h2>";
+}
+</script>
+
+</body>
+</html>
