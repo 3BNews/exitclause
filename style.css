@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Courier New", monospace;
+}
+
+body {
+    background: #000;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: background 0.15s linear;
+}
+
+/* Idle pulse */
+body.idle {
+    animation: idlePulse 6s infinite;
+}
+
+@keyframes idlePulse {
+    0% { background-color: #000; }
+    50% { background-color: #050505; }
+    100% { background-color: #000; }
+}
+
+/* RGB Split */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    z-index: 2;
+}
+
+body::before {
+    background: rgba(255,0,0,0.03);
+    transform: translateX(-1px);
+}
+
+body::after {
+    background: rgba(0,0,255,0.03);
+    transform: translateX(1px);
+}
+
+/* Container */
+.container {
+    text-align: center;
+    z-index: 10;
+}
+
+/* Input */
+input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 4rem;
+    text-align: center;
+    letter-spacing: 1rem;
+    width: 420px;
+    text-transform: uppercase;
+    caret-color: white;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+input::placeholder {
+    color: #111;
+}
+
+/* Shake animation */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    10% { transform: translateX(-12px); }
+    20% { transform: translateX(12px); }
+    30% { transform: translateX(-10px); }
+    40% { transform: translateX(10px); }
+    50% { transform: translateX(-8px); }
+    60% { transform: translateX(8px); }
+    70% { transform: translateX(-6px); }
+    80% { transform: translateX(6px); }
+    90% { transform: translateX(-3px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.6s ease;
+}
+
+.distort {
+    filter: blur(2px);
+    transform: scale(0.98);
+}
+
+/* Message */
+.message {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    opacity: 0;
+    transition: opacity 1s ease;
+    color: #00ff88;
+}
+
+.show {
+    opacity: 1;
+}
+
+/* VHS Overlay */
+.vhs-overlay {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 5;
+}
+
+/* Scanlines */
+.scanlines {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.03) 0px,
+        rgba(255,255,255,0.03) 1px,
+        transparent 2px,
+        transparent 4px
+    );
+    animation: scanMove 8s linear infinite;
+}
+
+@keyframes scanMove {
+    from { transform: translateY(0); }
+    to { transform: translateY(4px); }
+}
+
+/* Noise */
+.noise {
+    position: absolute;
+    inset: 0;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.07;
+    animation: noiseFlicker 0.2s infinite;
+}
+
+@keyframes noiseFlicker {
+    0% { opacity: 0.05; }
+    50% { opacity: 0.08; }
+    100% { opacity: 0.05; }
+}
+
+/* Vignette */
+.vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center,
+        transparent 55%,
+        rgba(0,0,0,0.6) 100%);
+}
+
+.center-text {
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    text-align: center;
+    max-width: 70%;
+    z-index: 10;
+}
+
+.wave-text {
+    position: absolute;
+    top: 15%;
+    color: #888;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.simon-container {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(2, 150px);
+    gap: 20px;
+    z-index: 10;
+}
+
+.simon-btn {
+    background: #111;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: background 0.1s ease, transform 0.05s ease;
+}
+
+.simon-btn.active {
+    background: white;
+}
+
+.simon-btn:active {
+    transform: scale(0.95);
+}

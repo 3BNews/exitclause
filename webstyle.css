@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: Tahoma, Verdana, sans-serif;
+  background: radial-gradient(circle at top, #1c2f5c, #0e1833);
+  color: white;
+}
+
+.topbar {
+  background: #ffd84d;
+  color: #1a2f6b;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  padding: 15px;
+  letter-spacing: 4px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: #14275a;
+  padding: 12px;
+}
+
+.nav-btn {
+  color: #ffd84d;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: #ffd84d;
+  color: #14275a;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.content {
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.circle-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.circle-btn {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #1a2f6b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border: 3px solid #ffd84d;
+}
+
+.circle-btn:hover {
+  transform: scale(1.1);
+  background: #ffd84d;
+  color: #14275a;
+}
+
+.character-info {
+  margin-top: 40px;
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Floppy Disk",
+    "role": "Original Systems Engineer",
+    "description": "A founding member of the digital response unit with unmatched expertise in legacy infrastructure."
+  },
+  {
+    "name": "Patchnote",
+    "role": "Lead Software Analyst",
+    "description": "Responsible for maintaining national security software and correcting anomalies."
+  },
+  {
+    "name": "Operator",
+    "role": "Network Supervisor",
+    "description": "The unseen authority coordinating missions during live incidents."
+  }
+]

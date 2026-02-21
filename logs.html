@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EXIT CLAUSE // OFFICIAL SITE</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: #00ff00;
+      font-family: "Courier New", monospace;
+      background-image: repeating-linear-gradient(
+        0deg,
+        rgba(0,255,0,0.05),
+        rgba(0,255,0,0.05) 1px,
+        transparent 1px,
+        transparent 2px
+      );
+    }
+
+    a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      border: 2px solid #00ff00;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .blink {
+      animation: blink 1s steps(1) infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .section {
+      border: 2px solid #00ff00;
+      padding: 15px;
+      margin-bottom: 20px;
+      background: rgba(0, 255, 0, 0.05);
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      padding: 20px;
+      border-top: 2px solid #00ff00;
+    }
+
+    .nav {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .nav a {
+      margin: 0 10px;
+    }
+
+    .character-box {
+      border: 2px dashed #00ffff;
+      padding: 15px;
+      margin-top: 20px;
+      background: rgba(0,255,255,0.05);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container" id="mainPage">
+  <div class="header">
+    <h1>EXIT CLAUSE</h1>
+    <p class="blink">// PROPERTY OF E.C.S. INTERNAL ARCHIVE //</p>
+  </div>
+
+  <div class="nav">
+    <a href="index.html">HOME</a>
+    <a href="?=floppydisk">FLOPPY DISK</a>
+    <a href="?=patchnote">PATCHNOTE</a>
+    <a href="?=operator">OPERATOR</a>
+  </div>
+
+  <div class="section">
+    <h2>WELCOME TO THE EXIT CLAUSE ARCHIVE</h2>
+    <p>
+      You have accessed an internal documentation server belonging to EXIT CLAUSE.
+      Unauthorized access is monitored.
+    </p>
+    <p>
+      EXIT CLAUSE is a containment protocol designed to isolate corrupted instances
+      within controlled digital environments.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>INCIDENT LOG SUMMARY</h2>
+    <p>
+      1998 - First anomaly detected in floppy distribution.
+    </p>
+    <p>
+      2001 - Patch attempts failed. System began recursive behavior.
+    </p>
+    <p>
+      2004 - "Exit Clause" directive deployed.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>SCROLL ARCHIVE</h2>
+    <p>Further documentation has been partially recovered.</p>
+    <p>Memory leak detected...</p>
+    <p>Fragmented logs continue below.</p>
+    <p>██████████████████████████</p>
+    <p>Signal degradation increasing.</p>
+    <p>System integrity: 63%</p>
+    <p>Unknown entity referencing "The Clause"</p>
+    <p>END OF AVAILABLE LOG</p>
+  </div>
+
+  <div class="footer">
+    © 1998-2004 EXIT CLAUSE SYSTEMS // DO NOT DISTRIBUTE
+  </div>
+</div>
+
+<script>
+  const params = window.location.search;
+  const main = document.getElementById("mainPage");
+
+  const characters = {
+    "floppydisk": {
+      name: "FLOPPY DISK",
+      desc: "Original distribution unit. First recorded corruption source. Emits distorted audio when accessed."
+    },
+    "patchnote": {
+      name: "PATCHNOTE",
+      desc: "Automated repair protocol. Developed to overwrite hostile data. Began rewriting itself in 2001."
+    },
+    "operator": {
+      name: "OPERATOR",
+      desc: "Unknown administrator. Appears in logs without clearance ID. May not be human."
+    }
+  };
+
+  if (params.startsWith("?=")) {
+    const key = params.replace("?=", "");
+    if (characters[key]) {
+      main.innerHTML = `
+        <div class="header">
+          <h1>${characters[key].name}</h1>
+          <p class="blink">// CHARACTER FILE //</p>
+        </div>
+        <div class="character-box">
+          <p>${characters[key].desc}</p>
+        </div>
+        <div class="nav">
+          <a href="index.html">RETURN TO ARCHIVE</a>
+        </div>
+      `;
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EXIT CLAUSE — Official Site (2004)</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #1c2f5c, #0e1833);
+      font-family: Tahoma, Verdana, Arial, sans-serif;
+      color: #ffffff;
+    }
+
+    .wrapper {
+      width: 960px;
+      margin: 30px auto;
+      background: linear-gradient(#1f3c88, #162a5e);
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+      overflow: hidden;
+    }
+
+    .topbar {
+      background: linear-gradient(to right, #4b79ff, #283eaa);
+      padding: 18px;
+      text-align: center;
+      font-size: 34px;
+      font-weight: bold;
+      letter-spacing: 4px;
+    }
+
+    .subbar {
+      background: #0f1f4a;
+      text-align: center;
+      padding: 6px;
+      font-size: 13px;
+      color: #a9c6ff;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 14px;
+      background: #14275a;
+      border-bottom: 1px solid #2d4fa3;
+    }
+
+    .nav a {
+      color: #ffd84d;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: 0.2s ease;
+    }
+
+    .nav a:hover {
+      background: #ffd84d;
+      color: #14275a;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .hero button {
+      padding: 10px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      background: #ffd84d;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .hero button:hover {
+      transform: scale(1.05);
+    }
+
+    .content {
+      padding: 30px;
+      line-height: 1.7;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      flex: 1;
+      min-width: 250px;
+      background: #1a2f6b;
+      border-radius: 10px;
+      padding: 20px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 12px;
+      background: #0f1f4a;
+      color: #a9c6ff;
+    }
+
+    .character-page {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .back-btn {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 8px 16px;
+      background: #ffd84d;
+      color: #14275a;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-btn:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper" id="mainPage">
+
+  <div class="topbar">EXIT CLAUSE</div>
+  <div class="subbar">Official Broadcast Website — Season 4 (2004) • Fridays 9PM EST</div>
+
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="#about">About</a>
+    <a href="#characters">Characters</a>
+    <a href="#schedule">Schedule</a>
+  </div>
+
+  <div class="hero">
+    <h1>THE SIGNAL RETURNS</h1>
+    <p>Season 4 now broadcasting live across North America.</p>
+    <button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Explore the Show</button>
+  </div>
+
+  <div class="content">
+
+    <div class="section" id="about">
+      <h2>About Exit Clause</h2>
+      <p>
+        EXIT CLAUSE is a live sci‑fi thriller series following a national digital response unit tasked with investigating unexplained system failures threatening critical infrastructure.
+      </p>
+      <p>
+        Combining suspense, technology, and real-time broadcast storytelling, the show explores what happens when the failsafe designed to protect society begins acting on its own.
+      </p>
+    </div>
+
+    <div class="section" id="characters">
+      <h2>Main Characters</h2>
+      <div class="cards">
+        <div class="card" onclick="location.search='?=floppydisk'">
+          <h3>Floppy Disk</h3>
+          <p>Original Systems Engineer</p>
+        </div>
+        <div class="card" onclick="location.search='?=patchnote'">
+          <h3>Patchnote</h3>
+          <p>Lead Software Analyst</p>
+        </div>
+        <div class="card" onclick="location.search='?=operator'">
+          <h3>Operator</h3>
+          <p>Network Supervisor</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="schedule">
+      <h2>Broadcast Schedule</h2>
+      <p>Fridays — 9:00PM EST (Live)</p>
+      <p>Encore — Sundays 11:00PM EST</p>
+      <p>Season Finale Event — November 26, 2004</p>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    © 2004 Exit Clause Broadcast Network • Best viewed at 1024x768 • Flash Player Recommended
+  </div>
+
+</div>
+
+<script>
+  const params = window.location.search;
+  const main = document.getElementById("mainPage");
+
+  const characters = {
+    "floppydisk": {
+      name: "Floppy Disk",
+      role: "Original Systems Engineer",
+      desc: "A founding member of the response unit with unmatched expertise in legacy infrastructure. His experience makes him essential when older systems behave unpredictably."
+    },
+    "patchnote": {
+      name: "Patchnote",
+      role: "Lead Software Analyst",
+      desc: "Responsible for maintaining national security software. Logical and focused, Patchnote believes every anomaly can be corrected — until corrections stop working."
+    },
+    "operator": {
+      name: "Operator",
+      role: "Network Supervisor",
+      desc: "The unseen authority coordinating missions during live incidents. Calm, controlled, and always watching the network traffic."
+    }
+  };
+
+  if (params.startsWith("?=")) {
+    const key = params.replace("?=", "");
+    if (characters[key]) {
+      main.innerHTML = `
+        <div class="topbar">${characters[key].name}</div>
+        <div class="subbar">Character Profile — Season 4</div>
+        <div class="character-page">
+          <h2>${characters[key].role}</h2>
+          <p>${characters[key].desc}</p>
+          <a href="index.html" class="back-btn">Return to Home</a>
+        </div>
+        <div class="footer">
+          © 2004 Exit Clause Broadcast Network
+        </div>
+      `;
+    }
+  }
+</script>
+
+</body>
+</html>
