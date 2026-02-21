@@ -1,9 +1,12 @@
 [
   {
-    "name": "Floppy Disk",
-    "role": "Original Systems Engineer",
-    "description": "A founding member of the digital response unit with unmatched expertise in legacy infrastructure."
-  },
+  "tag": "floppydisk",
+  "name": "Floppy Disk",
+  "role": "Original Systems Engineer",
+  "description": "Legacy systems expert.",
+  "music": "sfx/floppy.mp3",
+  "customHTML": "<div>Extra content here</div>"
+},
   {
     "name": "Patchnote",
     "role": "Lead Software Analyst",
