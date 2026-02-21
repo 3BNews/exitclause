@@ -23,9 +23,7 @@ if (container) {
         btn.className = "circle-btn";
         btn.innerText = char.name;
         btn.onclick = () => {
-          infoBox.innerHTML = `<h3>${char.name}</h3>
-                               <p><strong>${char.role}</strong></p>
-                               <p>${char.description}</p>`;
+          window.location.href = `profile.html?=${char.tag}`;
         };
         container.appendChild(btn);
       });
