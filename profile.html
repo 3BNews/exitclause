@@ -18,13 +18,19 @@
   <!-- Character content loads here dynamically -->
 </div>
 
+<audio id="characterMusic" loop></audio>
+
 <script>
 const content = document.getElementById("profileContent");
-const params = new URLSearchParams(window.location.search);
-const tag = params.get(""); // handles ?=floppydisk format
+const musicPlayer = document.getElementById("characterMusic");
 
-// Support both ?=floppydisk and ?tag=floppydisk
-const finalTag = tag || params.get("tag");
+const params = new URLSearchParams(window.location.search);
+const tagFromEquals = window.location.search.startsWith("?=")
+  ? window.location.search.replace("?=", "")
+  : null;
+const tagFromNamed = params.get("tag");
+
+const finalTag = tagFromEquals || tagFromNamed;
 
 if (finalTag) {
   fetch("characters.json")
@@ -33,12 +39,23 @@ if (finalTag) {
       const character = data.find(c => c.tag === finalTag);
       if (character) {
         document.title = `Exit Clause — ${character.name}`;
+
         content.innerHTML = `
           <h2>${character.name}</h2>
           <p><strong>${character.role}</strong></p>
           <p>${character.description}</p>
           ${character.customHTML || ""}
         `;
+
+        // Load custom music if provided
+        if (character.music) {
+          musicPlayer.src = character.music;
+          musicPlayer.volume = 0.6;
+          musicPlayer.play().catch(() => {
+            console.log("Autoplay blocked until user interaction.");
+          });
+        }
+
       } else {
         content.innerHTML = "<h2>Profile Not Found</h2>";
       }
